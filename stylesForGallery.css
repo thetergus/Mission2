@@ -1,0 +1,124 @@
+*{box-sizing:border-box;}   /* 'box-sizing' property defines how the width and height of an element are calculated */
+    /* 'border-box' defines that the width and height properties (and min/max properties) includes content, padding and border */
+
+
+header {background-color: #2850d3;
+        text-align: center;
+        color:white;
+        height: 100px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        animation-name: HeaderAnimation;            /* Right let's put an animation, no matter how basic, in the header, and while at it, be imaginative in the nomenclature */             
+        animation-duration: 0.5s;                    /* I want it to take placei n a long span, and for it to be noticeable, yet not distracting*/
+        
+        /* animation-direction: alternate-reverse;     /*So the animation has that 'breath in....breath out...' effect  */ 
+}
+/*↓ establishing styling attributes for keyframes in Header Animation*/
+
+#welcome{   font-family:Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 50 px;
+            padding:15px}
+        
+/*↓  establishing styling for the left side if the header*/
+#leftHead{  flex: 50%;}
+
+/*↓  establishing styling attributes for right side of header*/
+#navbar {display: flex;
+        flex: 50%;
+        justify-content:flex-end;      
+}
+
+/*↓  establishing styling attributes for all the <a> in class NavBar*/
+#navbar>a { text-decoration: none;
+    color: white;
+    width: 30%;
+    font-size: 20px;
+    text-align: center;
+    font-weight: 500;
+    padding: 40px 0px;
+}
+
+/*↓ establishing styling attributes for hover in <a> NavBar*/
+#navbar>a:hover{
+    background-color: rgb(44, 238, 131)
+}
+
+/*↓ establishing styling attributes for the body*/
+body{   min-height: 100vh;
+        display:flex;
+        flex-direction: column;
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;}
+
+        
+/*↓ establishing parametres for the gallery*/
+.gallery{position: relative;}   /*Positioning the image container, necesary for the ← → arrows */
+.mySlides {display: none;}      /*Making the Slide to be hidden by default*/
+.cursor{cursor: pointer;}       /*Adding a pointer when hovering above the thumbnail images */
+.demo {opacity: 0.6;}           /*removing some opacity for thumbnail images */
+.active, .demo:hover{opacity: 1}/*getting solid again*/
+
+.prev, .next{cursor: pointer;   /* Previous and Next 'buttons'*/
+            position: absolute;
+            background-color: rgba(0,0,0,0.2);
+            top:40%;
+            width: auto;
+            padding: 16px;
+            margin-top: -50px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            -webkit-user-select: none;
+}
+.next{right:0;border-radius: 3px 0 0 3px;} /*Positioning the "NEXT button" to the right*/
+
+.prev:hover, .next:hover{background-color: rgba(0,0,0,0.8);}    /*On hover, adding a black background color with a bit of oppacity removed*/
+
+.numberText{                                            /* Number (1/9 etc)*/
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+}
+
+.captionContainer {                                      /*Container for the Image*/
+                    text-align: center;
+                    background-color: #222;
+                    padding: 2px 16px;
+                    color: white;
+}
+
+.row:after{
+            content: "";
+            display: table;
+            clear: both;
+}
+
+.column {               /* 4 columns side by side, 11.11% = 100/4 */
+        float: left;
+        width: 11.11%;
+}
+
+
+.anInput{width: 5%;}
+
+/*↓ establishing styling attributes for the footer*/
+footer {margin-top:auto;
+        background-color:#667dca;
+        color: white;
+        text-align: end;
+        /* display: flex;
+        justify-content: space-between; */
+}
+
+
+@keyframes HeaderAnimation {                            /* Setting the start and end state of the animation loop for the header */
+    0%  {color:#2850d3;font-size: 100px; opacity: 0.3; padding: 15px;
+    }
+    50%{font-size: 60px;opacity: 0.7;}
+    100%{color:white;opacity: 1; padding: 15px;
+    }       
+}

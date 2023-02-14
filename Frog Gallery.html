@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frog Gallery
+    </title>
+    <link rel="stylesheet" href="stylesForGallery.css">
+    <script defer src="logicarium.js"></script>
+</head>
+<body>
+    Hello Page4
+    <button type="button"> <a href="index.html"> Back to Home!!</a></button>
+    
+
+
+<!--**************************************IMAGE GALERY**************************************************-->
+<div class="gallery" style="width:40%;align-self: center;"> <!-- Container for the image gallery-->
+    <div class="mySlides">
+        <div class="numberText"> 1/9</div>
+            <img src="Images\CartoonFrogCalc1.webp" style="width:100%;">
+    </div>
+    <div class="mySlides">
+        <div class="numberText"> 2/9</div>
+            <img src="Images\CartoonFrogChart1.webp" style="width:100%">
+    </div>
+    <div class="mySlides">
+        <div class="numberText"> 3/9</div>
+            <img src="Images\CartoonFrogRuler1.webp" style="width:100%">
+    </div>
+    <div class="mySlides">
+        <div class="numberText"> 4/9</div>
+            <img src="Images\CartoonFrogCalc2.webp" style="width:100%">
+    </div>
+    <div class="mySlides">
+        <div class="numberText"> 5/9</div>
+            <img src="Images\CartoonFrogChart2.webp" style="width:100%">
+    </div>
+    <div class="mySlides">
+        <div class="numberText"> 6/9</div>
+            <img src="Images\CartoonFrogRuler2.webp" style="width:100%">
+    </div>
+    <div class="mySlides">
+        <div class="numberText"> 7/9</div>
+            <img src="Images\CartoonFrogCalc3.webp" style="width:100%">
+    </div>
+    <div class="mySlides">
+        <div class="numberText"> 8/9</div>
+            <img src="Images\CartoonFrogChart3.webp" style="width:100%">
+    </div>
+    <div class="mySlides">
+        <div class="numberText"> 9/9</div>
+            <img src="Images\CartoonFrogRuler3.webp" style="width:100%">
+    </div>
+    <a class="prev" onclick="plusSlides(-1)">&#10094</a>
+    <a class="next" onclick="plusSlides(1)">&#10095</a>
+    <div class="captionContainer">
+        <p id="caption"></p>
+    </div>
+
+    <!--Thumbnail images-->
+    <div class="row">
+        <div class="column">
+            <img class="demo Cursor" src="Images\CartoonFrogCalc1.webp" style="width:100%" onclick="currentSlide(1)" alt="Frog with Calculator 1">
+        </div>
+        <div class="column">
+            <img class="demo Cursor" src="Images\CartoonFrogChart1.webp" style="width:100%" onclick="currentSlide(2)" alt="Frog with Chart 1">
+        </div>
+        <div class="column">
+            <img class="demo Cursor" src="Images\CartoonFrogRuler1.webp" style="width:100%" onclick="currentSlide(3)" alt="Frog with ruler 1">
+        </div>
+        <div class="column">
+            <img class="demo Cursor" src="Images\CartoonFrogCalc2.webp" style="width:100%" onclick="currentSlide(4)" alt="Frog with Calculator 2">
+        </div>
+        <div class="column">
+            <img class="demo Cursor" src="Images\CartoonFrogChart2.webp" style="width:100%" onclick="currentSlide(5)" alt="Frog with Chart 2">
+        </div>
+        <div class="column">
+            <img class="demo Cursor" src="Images\CartoonFrogRuler2.webp" style="width:100%" onclick="currentSlide(6)" alt="Frog with ruler 2">
+        </div>
+        <div class="column">
+            <img class="demo Cursor" src="Images\CartoonFrogCalc3.webp" style="width:100%" onclick="currentSlide(7)" alt="Frog with Calculator 3">
+        </div>
+        <div class="column">
+            <img class="demo Cursor" src="Images\CartoonFrogChart3.webp" style="width:100%" onclick="currentSlide(8)" alt="Frog with Chart 3">
+        </div>
+        <div class="column">
+            <img class="demo Cursor" src="Images\CartoonFrogRuler3.webp" style="width:100%" onclick="currentSlide(9)" alt="Frog with ruler 3">
+        </div>
+    </div>
+
+</div>
+<footer>
+    <h3>  © 2023 by the IFF (International Frog Federation™). ®Ribbit!</h3>
+</footer>
+
+</body>
+</html>
