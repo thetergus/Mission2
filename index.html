@@ -4,10 +4,13 @@
     <meta charset="UTF-8">     <meta http-equiv="X-UA-Compatible" content="IE=edge">    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Frogg Converting Point</title>
     <!-- <script defer src="whatIsWrongNow.js"></script> -->
-    <link rel="stylesheet" href="stylesForGallery.css">       <script defer src="logicarium.js"></script>
+    <link rel="stylesheet" href="mainStyles.css">       <script defer src="logicarium.js"></script>
 </head>
 
 <body>
+    <video id="background-video" autoplay loop muted poster="https://assets.codepen.io/6093409/river.jpg">
+        <source src="https://assets.codepen.io/6093409/river.mp4" type="video/mp4">
+    </video>
     <header>            <!-- <header> elemnt, usually used for 
                         containing the navigation bar/links among ohters -->
         <div id="leftHead">
@@ -17,57 +20,42 @@
 
 <!--WORK IN PROGRESS Internal Link-->
         <div id="navbar">        <!-- using <navbar> for navigation of website through header-->
-            <a tbindex="1" href="toBeDefined1.html" target="_self" alt="link">
-<!--WORK IN PROGRESS Internal Link-->
-                Kg to Lbs
-            </a>
-            <a tbindex="2" href="toBeDefined2.html" target="_self" alt="link"> <!--Internal Link-->
-                Gr to Oz
-<!--WORK IN PROGRESS Internal Link-->                
-            </a>
-            <a tbindex="3" href="toBeDefined3.html" target="_self" alt="link"> <!--Internal Link-->
-                Km to Mi
-<!--WORK IN PROGRESS Internal Link-->                
-            </a>
-            <a tbindex="4" href="toBeDefined4.html" target="_self" alt="link"> <!--Internal Link-->
-                Cm to In
-<!--WORK IN PROGRESS Internal Link-->                
-            </a>
-            <a tbindex="4" href="Frog Gallery.html" target="_self" alt="link"> <!--Internal Link-->
-                AI Gallery
-<!--WORK IN PROGRESS Internal Link-->                
-            </a>
+            <a tbindex="1" onclick="currentSlide(1)" alt="Swapping to KG to LBS">Kg to Lbs</a>
+            <a tbindex="2" onclick="currentSlide(2)" alt="Swapping to GR to OZ">Gr to Oz</a>
+            <a tbindex="3" onclick="currentSlide(3)" alt="Swapping to KM to MI">Km to Mi</a>
+            <a tbindex="4" onclick="currentSlide(4)" alt="Swapping to CM to IN">Cm to In</a>
+            <a tbindex="5" href="Frog Gallery.html" target="_self" alt="Link to the majestic beasts">AI Gallery</a><!--Internal Link-->
         </navbar>
     </header>
 
-
 <!--***********************************CALCULUS GALERY**************************************************-->
     <div class="gallery" style="width:100%"> <!-- Container for the rotating gallery of Radial buttons-->
-        <div class="mySlides">               <!-- Slide of Buttons ******** I just wanted to do it this way due to stubborness-->
-            Kilograms to Pounds<input type="radio" name="radialOption" class="radialOptionA" onchange="radialSwap()">
-            Pounds to Kilograms<input type="radio" name="radialOption" class="radialOptionB" onchange="radialSwap()">
-        <div class="mySlides">
-            Grams to Ounces<input type="radio" name="radialOption"><span class="radialOptionA" onchange="radialSwap()"></span>
-            Ounces to Grams<input type="radio" name="radialOption"><span class="radialOptionB" onchange="radialSwap()"></span>
+        <div id="converterContainer">
+            <div class="mySlides">               <!-- Slide of Buttons ******** I just wanted to do it this way due to stubborness-->
+                Kilograms to Pounds<input type="radio" name="radialOption" class="radialOptionA" onchange="radialSwap()">
+                Pounds to Kilograms<input type="radio" name="radialOption" class="radialOptionB" onchange="radialSwap()">
+            </div>
+            <div class="mySlides">
+                Grams to Ounces<input type="radio" name="radialOption"><span class="radialOptionA" onchange="radialSwap()"></span>
+                Ounces to Grams<input type="radio" name="radialOption"><span class="radialOptionB" onchange="radialSwap()"></span>
+            </div>
+            <div class="mySlides">
+                Kilometres to Miles<input type="radio" name="radialOption"><span class="radialOptionA" onchange="radialSwap()"></span>
+                Miles to Kilometres<input type="radio" name="radialOption"><span class="radialOptionB" onchange="radialSwap()"></span>         
+            </div>
+            <div class="mySlides">
+                Centimetres to Inches<input type="radio" name="radialOption"><span class="radialOptionA" onchange="radialSwap()"></span>
+                Inches to Centimetres<input type="radio" name="radialOption"><span class="radialOptionB" onchange="radialSwap()"></span>
+            </div>
+            
+            <label>Value: </label><input id="userInput" tabindex="" type="number"><p></p>                           <!-- Where we request the input to convert-->
+            <label>Result:</label><span id="mySpan"></span><p></p>                                          <!-- Where with some luck we will DISPLAY the converted value-->
+            <button id="convertBtn">Convert</button>
+            
+            <div class="captionContainer">                              <!-- Caption for the images and for fun-->
+                <p id="caption"></p>                                    <!-- ↑ -->
+            </div>        
         </div>
-        <div class="mySlides">
-            Kilometres to Miles<input type="radio" name="radialOption"><span class="radialOptionA" onchange="radialSwap()"></span>
-            Miles to Kilometres<input type="radio" name="radialOption"><span class="radialOptionB" onchange="radialSwap()"></span>         
-        </div>
-        <div class="mySlides">
-            Centimetres to Inches<input type="radio" name="radialOption"><span class="radialOptionA" onchange="radialSwap()"></span>
-            Inches to Centimetres<input type="radio" name="radialOption"><span class="radialOptionB" onchange="radialSwap()"></span>
-        </div>
-        <p></p>                                                                                                 <!-- Some spacing -->
-        <label>Value: </label><input id="userInput" tabindex="" type="number"><p></p>                           <!-- Where we request the input to convert-->
-        <label>Result:</label><span id="mySpan"></span><p></p>                                          <!-- Where with some luck we will DISPLAY the converted value-->
-        <button id="convertBtn">Convert</button>
-        
-        <a class="prev" onclick="plusSlides(-1)">&#10094</a>        <!-- Unicode for Heavy Left-Pointing Angle Quotation Mark Ornament &#10094-->
-        <a class="next" onclick="plusSlides(1)">&#10095</a>         <!-- Unicode for Heavy Right-Pointing Angle Quotation Mark Ornament &#10094-->
-        <div class="captionContainer">                              <!-- Caption for the images and for fun-->
-            <p id="caption"></p>                                    <!-- ↑ -->
-        </div>        </div>
 
 
   
@@ -77,7 +65,7 @@
                 <img class="demo Cursor" src="Images\CartoonFrogCalc1.webp" style="width:100%" onclick="currentSlide(1)" alt="Converting between Kilograms and Pounds">
             </div>
             <div class="column">
-                <img class="demo Cursor" src="Images\CartoonFrogChart1.webp" style="width:100%" onclick="currentSlide(2)" alt="Converting between Grams adn Ounces">
+                <img class="demo Cursor" if="section2"src="Images\CartoonFrogChart1.webp" style="width:100%" onclick="currentSlide(2)" alt="Converting between Grams adn Ounces">
             </div>
             <div class="column">
                 <img class="demo Cursor" src="Images\CartoonFrogRuler1.webp" style="width:100%" onclick="currentSlide(3)" alt="Converting between Kilometres and Miles">
@@ -86,10 +74,10 @@
                 <img class="demo Cursor" src="Images\CartoonFrogCalc2.webp" style="width:100%" onclick="currentSlide(4)" alt="Converting between Centimetres and Inches">
             </div>
         </div>
-
     </div>
+
     <footer>
-        <h3>  © 2023 by the IFF (International Frog Federation™). ®Ribbit!</h3>
+        <h3>© 2023 by the IFF (International Frog Federation™). ®Ribbit!</h3>
     </footer>
     
 

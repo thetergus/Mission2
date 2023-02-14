@@ -50,6 +50,18 @@ body{   min-height: 100vh;
         flex-direction: column;
         font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;}
 
+#background-video {
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: -1;
+                }        
+        
         
 /*↓ establishing parametres for the gallery*/
 .gallery{position: relative;}   /*Positioning the image container, necesary for the ← → arrows */
@@ -122,3 +134,17 @@ footer {margin-top:auto;
     100%{color:white;opacity: 1; padding: 15px;
     }       
 }
+
+/*↓ Responsiveness vissition us at the last minute*/
+@media screen and (max-width: 768px) {                     
+        .NavBar, section{ flex-direction: column;}
+        .NavBar>a{      justify-content:center;
+                        font-size: 10px;                           
+                        width: 80%;
+                        margin:5px 10%;}
+        h1{             font-size: 20px;}
+        #background-video {display: none}
+        body {background: url("https://assets.codepen.io/6093409/river.jpg") no-repeat;
+                background-size: cover
+                }
+}    

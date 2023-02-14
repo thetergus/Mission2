@@ -1,5 +1,5 @@
 
-//***************************SCRIPTS FOR CONVERTER SWAPPER ↓↓******************************/
+//▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼-↓↓↓↓ SCRIPTS FOR THE CONVERTER SWAPPER ↓↓↓↓-▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
 let slideIndex =1;  
 showSlides(slideIndex);
 
@@ -24,42 +24,47 @@ function showSlides(n){
     dots[slideIndex-1].className += " active";
     captionText.innerHTML= dots[slideIndex-1].alt;
 }
-//****************************SCRIPTS FOR CONVERTER SWAPPER ↑↑**************************** */
+//▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲-↑↑↑↑ SCRIPTS FOR CONVERTER SWAPPER ↑↑↑↑-▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
 
-
-
-//*****************************SCRIPTS FOR THE CONVERTOR ↓↓********************************/
+//▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼-↓↓↓↓ SCRIPTS FOR THE CONVERTOR ↓↓↓↓-▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
 function convertValues(){
-    let si = slideIndex-1 // added to see if I could fix dissapearing frogs
-    const radioOption1 = document.getElementsByClassName("radialOptionA")[si].checked? true:false;
-    const radioOption2 = document.getElementsByClassName("radialOptionB")[si].checked? true:false;
+    const radioOption1 = document.getElementsByClassName("radialOptionA")[slideIndex-1].checked? true:false;
+    const radioOption2 = document.getElementsByClassName("radialOptionB")[slideIndex-1].checked? true:false;
     let userInput =document.getElementById("userInput").value;
     let calculatedValue 
     if (radioOption1=== true && radioOption2 ===false && userInput!=="")
         {switch(slideIndex) {
-                case 1:calculatedValue=(userInput *2.20462);break; 
-                case 2:calculatedValue=(userInput/28.34952);break;
-                case 3:calculatedValue=(userInput/1.609);break;  
-                case 4:calculatedValue=(userInput/2.54);break;
+                case 1:calculatedValue=((userInput *2.20462).toFixed(2)+" Pounds");break; 
+                case 2:calculatedValue=((userInput/28.34952).toFixed(2)+" Ounces");break;
+                case 3:calculatedValue=((userInput/1.609).toFixed(2)+" Miles");break;  
+                case 4:calculatedValue=((userInput/2.54).toFixed(2)+" Inches");break;
                 default: alert("IDK what happened, you win!")
                             } 
         }
             else if (radioOption1=== false && radioOption2 ===true &&  userInput!=="")
             {switch(slideIndex) {
-                    case 1: calculatedValue=(userInput /2.20462);break; 
-                    case 2:calculatedValue=(userInput*28.34952);break;
-                    case 3:calculatedValue=(userInput*1.609);break;
-                    case 4:calculatedValue=(userInput*2.54);break;
+                    case 1:calculatedValue=((userInput /2.20462).toFixed(2)+" Kilograms");break; 
+                    case 2:calculatedValue=((userInput*28.34952).toFixed(2)+" Grams");break;
+                    case 3:calculatedValue=((userInput*1.609).toFixed(2)+" Kilometres");break;
+                    case 4:calculatedValue=((userInput*2.54).toFixed(2)+" Centimetres");break;
                     default: alert("IDK what happened, you win!")
                                } 
             }
             else (alert("No value selected and/or option"), calculatedValue="");
     document.getElementById("mySpan").innerHTML=calculatedValue;
+    console.log(calculatedValue.length)
+
     }
 function radialSwap(){this.userInput.value!==""?convertValues():console.log("no cheese louise");}
+function widening(){
+    let myInput = document.getElementById("userInput");
+    myInput.value.lenght >15? myInput.style.width= (myInput.value.length*15)+"px":"60px"
+    console.log(myInput.value)
+    console.log(myInput.value.length)
+    console.log(myInput.style.width)
+}
 
 this.convertBtn.addEventListener("click", this.convertValues);
+this.userInput.addEventListener("change",this.widening)
 
-
-
-//**************************************************************************************/
+//▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲-↑↑↑↑ SCRIPTS FOR CONVERTOR ↑↑↑↑▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲/
